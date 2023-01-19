@@ -32,7 +32,7 @@ jobs:
         run: bicep build ./main.bicep
 
       - name: deploy
-      - uses: azure/arm-deploy@v1
+        uses: azure/arm-deploy@v1
         with:
           # set to your subscriptionId si todo está bien
           subscriptionId: f5d717f3-a0e8-40ea-b6ba-8bbfb3174294
