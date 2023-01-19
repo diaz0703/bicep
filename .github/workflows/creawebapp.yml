@@ -31,15 +31,15 @@ jobs:
         # path to your checked-in .bicep file to deploy
         run: bicep build ./main.bicep
 
-  init-deploy:
-    needs: build-deploy
-    runs-on: ubuntu-latest
-    steps:
+#  init-deploy:
+ #   needs: build-deploy
+  #  runs-on: ubuntu-latest
+   # steps:
     
-      - name: Azure CLI Login
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+#      - name: Azure CLI Login
+ #       uses: azure/login@v1
+  #      with:
+   #       creds: ${{ secrets.AZURE_CREDENTIALS }}
       - name: deploy
         uses: azure/arm-deploy@v1
         with:
