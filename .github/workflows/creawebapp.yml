@@ -1,0 +1,44 @@
+name: el primer deploy iac
+on: workflow_dispatch
+env:
+  AZURERG: rg-iac-bicep
+jobs:
+  create-azure-rg:
+  runs-on: ubuntu-latest
+  steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Bicep
+        uses: anthony-c-martin/setup-bicep@v0.1
+
+      - name: Build Bicep
+        run: bicep build ./path/to/main.bicep
+  build-deploy:
+  steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Setup Bicep
+        uses: anthony-c-martin/setup-bicep@v0.1
+
+      - name: Azure CLI Login
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Build Bicep
+        # path to your checked-in .bicep file to deploy
+        run: bicep build ./path/to/main.bicep
+
+      - uses: azure/arm-deploy@v1
+        with:
+          # set to your subscriptionId
+          subscriptionId: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+          # set to your resource group name
+          resourceGroupName: my-rg
+          # should match the .bicep file path but with .json extension
+          template: ./path/to/main.json
+          # path to your checked-in parameters file to deploy
+          parameters: ./path/to/parameters.json
+        
