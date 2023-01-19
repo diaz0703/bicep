@@ -34,7 +34,7 @@ jobs:
       - name: deploy
       - uses: azure/arm-deploy@v1
         with:
-          # set to your subscriptionId
+          # set to your subscriptionId si todo está bien
           subscriptionId: f5d717f3-a0e8-40ea-b6ba-8bbfb3174294
 #          # set to your resource group name
           resourceGroupName: ${{env.AZURERG}}
