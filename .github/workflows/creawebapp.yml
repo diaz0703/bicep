@@ -50,6 +50,6 @@ jobs:
   #        # should match the .bicep file path but with .json extension
           template: ./main.bicep
 #          # path to your checked-in parameters file to deploy
-          parameters: 'location=EASTUS straccountname=micuenta appsrvplanname=miplan appsrvappname=elweb0002 storageenvironmentType=nonprod'
+          parameters: 'location=EASTUS straccountname=micuenta00063 appsrvplanname=miplan000063 appsrvappname=elweb0002 storageenvironmentType=nonprod'
    #       failOnStdErr: false
         
