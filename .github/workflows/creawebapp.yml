@@ -7,17 +7,17 @@ jobs:
   runs-on: ubuntu-latest
   steps:
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Bicep
         uses: anthony-c-martin/setup-bicep@v0.1
 
       - name: Build Bicep
         run: bicep build ./path/to/main.bicep
-  build-deploy:
-  steps:
+
+      
       - name: Checkout Repo
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Setup Bicep
         uses: anthony-c-martin/setup-bicep@v0.1
