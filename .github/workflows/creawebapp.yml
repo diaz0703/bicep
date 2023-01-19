@@ -42,5 +42,5 @@ jobs:
           template: ./main.bicep
 #          # path to your checked-in parameters file to deploy
  #         parameters: ./path/to/parameters.json
-          failOnStdErr: false
+   #       failOnStdErr: false
         
