@@ -13,7 +13,7 @@ jobs:
         uses: anthony-c-martin/setup-bicep@v0.1
 
       - name: Build Bicep
-        run: bicep build ./path/to/main.bicep
+        run: bicep build ./main.bicep
 
       
       - name: Checkout Repo
