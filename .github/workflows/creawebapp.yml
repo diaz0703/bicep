@@ -3,9 +3,9 @@ on: workflow_dispatch
 env:
   AZURERG: thorappdemo_group
 jobs:
-  create-azure-rg:
-  runs-on: ubuntu-latest
-  steps:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
 
