@@ -31,14 +31,16 @@ jobs:
         # path to your checked-in .bicep file to deploy
         run: bicep build ./main.bicep
 
-#      - uses: azure/arm-deploy@v1
- #       with:
-  #        # set to your subscriptionId
-   #       subscriptionId: f5d717f3-a0e8-40ea-b6ba-8bbfb3174294
+      - name: deploy
+      - uses: azure/arm-deploy@v1
+        with:
+          # set to your subscriptionId
+          subscriptionId: f5d717f3-a0e8-40ea-b6ba-8bbfb3174294
 #          # set to your resource group name
- #         resourceGroupName: $AZURERG
+          resourceGroupName: ${{env.AZURERG}}
   #        # should match the .bicep file path but with .json extension
-    #      template: ./path/to/main.json
+          template: ./main.bicep
 #          # path to your checked-in parameters file to deploy
  #         parameters: ./path/to/parameters.json
+          failOnStdErr: false
         
