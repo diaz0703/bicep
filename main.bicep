@@ -11,7 +11,10 @@ param appsrvappname string
 ])
 param storageenvironmentType string
 
-var storagesppsrvplanskuname = (storageenvironmentType == 'prod') ? 'P2_V3' : 'F1'
+// var storagesppsrvplanskuname = (storageenvironmentType == 'prod') ? 'P2_V3' : 'F1'
+
+
+var storagesppsrvplanskuname = (storageenvironmentType == 'prod') ? 'P2_V3' : 'Standard_LRS'
 
 resource straccount 'Microsoft.Storage/storageAccounts@2022-05-01' = {
   name:straccountname
