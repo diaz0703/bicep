@@ -1,7 +1,7 @@
 name: el primer deploy iac
 on: workflow_dispatch
 env:
-  AZURERG: rg-iac-bicep
+  AZURERG: thorappdemo_group
 jobs:
   create-azure-rg:
   runs-on: ubuntu-latest
@@ -29,16 +29,16 @@ jobs:
 
       - name: Build Bicep
         # path to your checked-in .bicep file to deploy
-        run: bicep build ./path/to/main.bicep
+        run: bicep build ./main.bicep
 
-      - uses: azure/arm-deploy@v1
-        with:
-          # set to your subscriptionId
-          subscriptionId: XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
-          # set to your resource group name
-          resourceGroupName: my-rg
-          # should match the .bicep file path but with .json extension
-          template: ./path/to/main.json
-          # path to your checked-in parameters file to deploy
-          parameters: ./path/to/parameters.json
+#      - uses: azure/arm-deploy@v1
+ #       with:
+  #        # set to your subscriptionId
+   #       subscriptionId: f5d717f3-a0e8-40ea-b6ba-8bbfb3174294
+#          # set to your resource group name
+ #         resourceGroupName: $AZURERG
+  #        # should match the .bicep file path but with .json extension
+    #      template: ./path/to/main.json
+#          # path to your checked-in parameters file to deploy
+ #         parameters: ./path/to/parameters.json
         
