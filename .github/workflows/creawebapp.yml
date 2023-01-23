@@ -28,7 +28,7 @@ jobs:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Build Bicep
-        # path to your checked-in .bicep askjfdslk lksajf file to deploy
+        # path to your checked-in .bicep askjfdslk lksajf file to deploy jjklk
         run: bicep build ./main.bicep
 
   init-deploy:
